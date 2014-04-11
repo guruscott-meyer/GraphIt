@@ -646,18 +646,48 @@ public class GraphItGUI extends javax.swing.JFrame {
                                     new Double( paramFieldD.getText() )
                                     } );
                 break;
-                /*case 6: form = new Asin( new double[] { 1.0, 1.0 } );
+                case 16: form = new Asin( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
                 break;
-                case 7: form = new Acos( new double[] { 1.0, 1.0 } );
+                case 17: form = new Acos( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
                 break;
-                case 8: form = new Atan( new double[] { 1.0, 1.0 } );
+                case 18: form = new Atan( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
                 break;
-                case 9: form = new Asec( new double[] { 1.0, 1.0 } );
+                case 19: form = new Asec( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
                 break;
-                case 10: form = new Acsc( new double[] { 1.0, 1.0 } );
+                case 20: form = new Acsc( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
                 break;
-                case 11: form = new Acot( new double[] { 1.0, 1.0 } );
-                break;*/
+                case 21: form = new Acot( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
+                break;
             }
 
             formulaLabel.setText( form.getLabel() );

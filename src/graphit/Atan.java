@@ -6,10 +6,27 @@
 
 package graphit;
 
+import GraphPanel.Formula;
+import java.lang.Math;
 /**
  *
  * @author admin
  */
-public class Atan {
+public class Atan extends Formula {
+    
+    public Atan() {
+        super();
+        label = "<html><i>y</i> = a + bArctan( c<i>x</i> + d )</html>";
+    }
+    
+    public Atan( double Params[] ) {
+        super( Params );
+        label = "<html><i>y</i> = a + bArctan( c<i>x</i> + d )</html>";
+    }
+    
+    @Override
+    public double getY( double x ) {
+        return Params[0] + Params[1] * Math.atan(Params[2] * x + Params[3]);
+    }
     
 }
