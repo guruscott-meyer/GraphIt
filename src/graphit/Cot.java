@@ -6,6 +6,7 @@
 
 package graphit;
 
+import GraphPanel.Formula;
 import java.lang.Math;
 
 /**
@@ -16,15 +17,15 @@ public class Cot extends Formula{
     
     public Cot() {
         super();
-        label = "<html><i>y</i> = acotb<i>x</i>";
+        label = "<html><i>y</i> = a + bcot( c<i>x</i> + d )";
     }
     
     public Cot( double params[] ) {
         super( params );
-        label = "<html><i>y</i> = acotb<i>x</i>";
+        label = "<html><i>y</i> = a + bcot( c<i>x</i> + d )";
     }
     
     public double getY( double x ){
-        return Params[0] / Math.tan( Params[1] * x );
+        return Params[0] + Params[1] / Math.tan( Params[2] * x + Params[3] );
     }
 }

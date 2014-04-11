@@ -6,6 +6,8 @@
 
 package graphit;
 
+import GraphPanel.Formula;
+
 /**
  *
  * @author Scott Meyer
