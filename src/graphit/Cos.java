@@ -6,6 +6,7 @@
 
 package graphit;
 
+import GraphPanel.Formula;
 import java.lang.Math;
 
 /**
@@ -16,12 +17,12 @@ public class Cos extends Formula {
     
     public Cos() {
         super();
-        label = "<html><i>y</i> = acosb<i>x</i>";
+        label = "<html><i>y</i> = a + bcos( c<i>x</i> + d )";
     }
     
     public Cos( double params[] ) {
         super( params );
-        label = "<html><i>y</i> = acosb<i>x</i>";
+        label = "<html><i>y</i> = a + bcos( c<i>x</i> + d )";
     }
     
     /**
@@ -31,6 +32,6 @@ public class Cos extends Formula {
      */
     @Override
     public double getY( double x ) {
-        return Params[0] * Math.cos( Params[1] * x);
+        return Params[0] + Params[1] * Math.cos( Params[2] * x + Params[3] );
     }
 }

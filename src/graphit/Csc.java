@@ -6,6 +6,7 @@
 
 package graphit;
 
+import GraphPanel.Formula;
 import java.lang.Math;
 
 /**
@@ -16,17 +17,17 @@ public class Csc extends Formula {
     
     public Csc() {
         super();
-        label = "<html><i>y</i> = acscb<i>x</i>";
+        label = "<html><i>y</i> = a + bcsc( c<i>x</i> + d )";
     }
     
     public Csc( double params[] ) {
         super( params );
-        label = "<html><i>y</i> = acscb<i>x</i>";
+        label = "<html><i>y</i> = a + bcsc( c<i>x</i> + d )";
     }
     
     @Override
     public double getY( double x ) {
-        return Params[0] / Math.cos( Params[1] * x );
+        return Params[0] + Params[1] / Math.cos( Params[2] * x + Params[3] );
     }
     
 }

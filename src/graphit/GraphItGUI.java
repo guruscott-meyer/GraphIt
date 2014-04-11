@@ -6,6 +6,8 @@
 
 package graphit;
 
+import GraphPanel.GraphPanel.*;
+import GraphPanel.Formula.*;
 import java.awt.Color;
 
 /**
@@ -19,6 +21,8 @@ public class GraphItGUI extends javax.swing.JFrame {
      */
     public GraphItGUI() {
         color = Color.red;
+        form = new Const();
+        scale = 10.0;
         initComponents();
     }
 
@@ -31,7 +35,6 @@ public class GraphItGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToolBar1 = new javax.swing.JToolBar();
         controlPanel = new javax.swing.JPanel();
         formulaBox = new javax.swing.JComboBox();
         formulaLabel = new javax.swing.JLabel();
@@ -51,13 +54,33 @@ public class GraphItGUI extends javax.swing.JFrame {
         paramFieldE = new javax.swing.JTextField();
         paramSliderE = new javax.swing.JSlider();
         resetButton = new javax.swing.JButton();
+        zoomInButton = new javax.swing.JButton();
+        zoomOutButton = new javax.swing.JButton();
         mainGraphPanel = new GraphPanel.GraphPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        viewMenu = new javax.swing.JMenu();
+        zoomInMenuItem = new javax.swing.JMenuItem();
+        zoomOutMenuItem = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        colorMenuItemBlack = new javax.swing.JMenuItem();
+        colorMenuItemBlue = new javax.swing.JMenuItem();
+        colorMenuItemCyan = new javax.swing.JMenuItem();
+        colorMenuItemDarkGray = new javax.swing.JMenuItem();
+        colorMenuItemGray = new javax.swing.JMenuItem();
+        colorMenuItemGreen = new javax.swing.JMenuItem();
+        colorMenuItemLightGray = new javax.swing.JMenuItem();
+        colorMenuItemMagenta = new javax.swing.JMenuItem();
+        colorMenuItemOrange = new javax.swing.JMenuItem();
+        colorMenuItemPink = new javax.swing.JMenuItem();
+        colorMenuItemRed = new javax.swing.JMenuItem();
+        colorMenuItemYellow = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToolBar1.setRollover(true);
-
-        formulaBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sine", "Cosine", "Tangent", "Secant", "Cosecant", "Cotangent", "Arcsine", "Arccosine", "Arctangent", "Arcsecant", "Arccosecant", "Arccotangent" }));
+        formulaBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Constant", "Line", "Quadratic", "Cubic", "Quartic", "lnX", "Power of E", "Power of X", "X Squared", "X Cubed", "Sine", "Cosine", "Tangent", "Secant", "Cosecant", "Cotangent", "Arcsine", "Arccosine", "Arctangent", "Arcsecant", "Arccosecant", "Arccotangent" }));
+        formulaBox.setSelectedIndex(-1);
         formulaBox.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -79,16 +102,26 @@ public class GraphItGUI extends javax.swing.JFrame {
         });
 
         formulaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        formulaLabel.setText("<html><i>y</i> = asinb<i>x</i></html>");
+        formulaLabel.setText(" ");
 
         paramLabelA.setText("a:");
 
-        paramFieldA.setEditable(false);
         paramFieldA.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        paramFieldA.setText("1");
+        paramFieldA.setText("0.0");
+        paramFieldA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paramFieldAActionPerformed(evt);
+            }
+        });
+        paramFieldA.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                paramFieldAPropertyChange(evt);
+            }
+        });
 
-        paramSliderA.setMinimum(-100);
-        paramSliderA.setValue(1);
+        paramSliderA.setMaximum(10000);
+        paramSliderA.setMinimum(-10000);
+        paramSliderA.setValue(0);
         paramSliderA.setEnabled(false);
         paramSliderA.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -98,12 +131,22 @@ public class GraphItGUI extends javax.swing.JFrame {
 
         paramLabelB.setText("b:");
 
-        paramFieldB.setEditable(false);
         paramFieldB.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        paramFieldB.setText("1");
+        paramFieldB.setText("0.0");
+        paramFieldB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paramFieldBActionPerformed(evt);
+            }
+        });
+        paramFieldB.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                paramFieldBPropertyChange(evt);
+            }
+        });
 
-        paramSliderB.setMinimum(-100);
-        paramSliderB.setValue(1);
+        paramSliderB.setMaximum(10000);
+        paramSliderB.setMinimum(-10000);
+        paramSliderB.setValue(0);
         paramSliderB.setEnabled(false);
         paramSliderB.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -113,12 +156,22 @@ public class GraphItGUI extends javax.swing.JFrame {
 
         paramLabelC.setText("c:");
 
-        paramFieldC.setEditable(false);
         paramFieldC.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        paramFieldC.setText("1");
+        paramFieldC.setText("0.0");
+        paramFieldC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paramFieldCActionPerformed(evt);
+            }
+        });
+        paramFieldC.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                paramFieldCPropertyChange(evt);
+            }
+        });
 
-        paramSliderC.setMinimum(-100);
-        paramSliderC.setValue(1);
+        paramSliderC.setMaximum(10000);
+        paramSliderC.setMinimum(-10000);
+        paramSliderC.setValue(0);
         paramSliderC.setEnabled(false);
         paramSliderC.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -128,12 +181,22 @@ public class GraphItGUI extends javax.swing.JFrame {
 
         paramLabelD.setText("d:");
 
-        paramFieldD.setEditable(false);
         paramFieldD.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        paramFieldD.setText("1");
+        paramFieldD.setText("0.0");
+        paramFieldD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paramFieldDActionPerformed(evt);
+            }
+        });
+        paramFieldD.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                paramFieldDPropertyChange(evt);
+            }
+        });
 
-        paramSliderD.setMinimum(-100);
-        paramSliderD.setValue(1);
+        paramSliderD.setMaximum(10000);
+        paramSliderD.setMinimum(-10000);
+        paramSliderD.setValue(0);
         paramSliderD.setEnabled(false);
         paramSliderD.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -143,12 +206,22 @@ public class GraphItGUI extends javax.swing.JFrame {
 
         paramLabelE.setText("e:");
 
-        paramFieldE.setEditable(false);
         paramFieldE.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        paramFieldE.setText("1");
+        paramFieldE.setText("0.0");
+        paramFieldE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paramFieldEActionPerformed(evt);
+            }
+        });
+        paramFieldE.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                paramFieldEPropertyChange(evt);
+            }
+        });
 
-        paramSliderE.setMinimum(-100);
-        paramSliderE.setValue(1);
+        paramSliderE.setMaximum(10000);
+        paramSliderE.setMinimum(-10000);
+        paramSliderE.setValue(0);
         paramSliderE.setEnabled(false);
         paramSliderE.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -157,52 +230,72 @@ public class GraphItGUI extends javax.swing.JFrame {
         });
 
         resetButton.setText("Reset");
+        resetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetButtonActionPerformed(evt);
+            }
+        });
+
+        zoomInButton.setText("Zoom In");
+        zoomInButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zoomInButtonActionPerformed(evt);
+            }
+        });
+
+        zoomOutButton.setText("Zoom Out");
+        zoomOutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zoomOutButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(paramSliderA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(paramSliderB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(paramSliderC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(paramSliderD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(paramSliderE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(formulaBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(formulaLabel)
+                    .addComponent(formulaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(controlPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(zoomInButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(zoomOutButton))
                     .addGroup(controlPanelLayout.createSequentialGroup()
                         .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(controlPanelLayout.createSequentialGroup()
                                 .addComponent(paramLabelA)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paramFieldA, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(paramFieldA, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(controlPanelLayout.createSequentialGroup()
                                 .addComponent(paramLabelB)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paramFieldB, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(paramFieldB, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(controlPanelLayout.createSequentialGroup()
                                 .addComponent(paramLabelC)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paramFieldC, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(paramFieldC, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(controlPanelLayout.createSequentialGroup()
                                 .addComponent(paramLabelD)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paramFieldD, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(paramFieldD, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(controlPanelLayout.createSequentialGroup()
                                 .addComponent(paramLabelE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paramFieldE, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(paramFieldE, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(controlPanelLayout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addComponent(resetButton)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(paramSliderA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(paramSliderB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(paramSliderC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(paramSliderD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(paramSliderE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(resetButton)
-                .addGap(67, 67, 67))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +303,7 @@ public class GraphItGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(formulaBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(formulaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(formulaLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(paramLabelA)
@@ -241,27 +334,156 @@ public class GraphItGUI extends javax.swing.JFrame {
                     .addComponent(paramFieldE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(paramSliderE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(zoomInButton)
+                    .addComponent(zoomOutButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(resetButton)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout mainGraphPanelLayout = new javax.swing.GroupLayout(mainGraphPanel);
         mainGraphPanel.setLayout(mainGraphPanelLayout);
         mainGraphPanelLayout.setHorizontalGroup(
             mainGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGap(0, 496, Short.MAX_VALUE)
         );
         mainGraphPanelLayout.setVerticalGroup(
             mainGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        viewMenu.setText("View");
+
+        zoomInMenuItem.setText("Zoom In");
+        zoomInMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zoomInMenuItemActionPerformed(evt);
+            }
+        });
+        viewMenu.add(zoomInMenuItem);
+
+        zoomOutMenuItem.setText("Zoom Out");
+        zoomOutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zoomOutMenuItemActionPerformed(evt);
+            }
+        });
+        viewMenu.add(zoomOutMenuItem);
+
+        jMenu2.setText("Color");
+
+        colorMenuItemBlack.setText("Black");
+        colorMenuItemBlack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemBlackActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemBlack);
+
+        colorMenuItemBlue.setText("Blue");
+        colorMenuItemBlue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemBlueActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemBlue);
+
+        colorMenuItemCyan.setText("Cyan");
+        colorMenuItemCyan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemCyanActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemCyan);
+
+        colorMenuItemDarkGray.setText("Dark Gray");
+        colorMenuItemDarkGray.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemDarkGrayActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemDarkGray);
+
+        colorMenuItemGray.setText("Gray");
+        colorMenuItemGray.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemGrayActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemGray);
+
+        colorMenuItemGreen.setText("Green");
+        colorMenuItemGreen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemGreenActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemGreen);
+
+        colorMenuItemLightGray.setText("Light Gray");
+        colorMenuItemLightGray.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemLightGrayActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemLightGray);
+
+        colorMenuItemMagenta.setText("Magenta");
+        colorMenuItemMagenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemMagentaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemMagenta);
+
+        colorMenuItemOrange.setText("Orange");
+        colorMenuItemOrange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemOrangeActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemOrange);
+
+        colorMenuItemPink.setText("Pink");
+        colorMenuItemPink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemPinkActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemPink);
+
+        colorMenuItemRed.setText("Red");
+        colorMenuItemRed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemRedActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemRed);
+
+        colorMenuItemYellow.setText("Yellow");
+        colorMenuItemYellow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                colorMenuItemYellowActionPerformed(evt);
+            }
+        });
+        jMenu2.add(colorMenuItemYellow);
+        jMenu2.add(jSeparator1);
+
+        viewMenu.add(jMenu2);
+
+        jMenuBar1.add(viewMenu);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -270,8 +492,7 @@ public class GraphItGUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(controlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(mainGraphPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -280,87 +501,356 @@ public class GraphItGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formulaBoxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_formulaBoxPropertyChange
-            
-    }//GEN-LAST:event_formulaBoxPropertyChange
-
-    private void paramSliderAStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderAStateChanged
-        paramFieldA.setText( Integer.toString(paramSliderA.getValue()) );
-        form.setA( paramSliderA.getValue() );
-    }//GEN-LAST:event_paramSliderAStateChanged
-
-    private void paramSliderBStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderBStateChanged
-        paramFieldB.setText( Integer.toString(paramSliderB.getValue()) );
-        form.setB( paramSliderA.getValue() );
-    }//GEN-LAST:event_paramSliderBStateChanged
-
-    private void paramSliderCStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderCStateChanged
-        paramFieldC.setText( Integer.toString(paramSliderC.getValue()) );
-        form.setC( paramSliderC.getValue() );
-    }//GEN-LAST:event_paramSliderCStateChanged
+    private void paramSliderEStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderEStateChanged
+        if( form.getParams().length > 4 ) {
+            double temp = paramSliderE.getValue() / 1000.0;
+            paramFieldE.setText( Double.toString( temp ) );
+            form.setParam( 4, temp );
+            mainGraphPanel.setFormula(form);
+        }
+    }//GEN-LAST:event_paramSliderEStateChanged
 
     private void paramSliderDStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderDStateChanged
-        paramFieldD.setText( Integer.toString(paramSliderD.getValue()) );
-        form.setD( paramSliderD.getValue() );
+        if( form.getParams().length > 3 ) {
+            double temp = paramSliderD.getValue() / 1000.0;
+            paramFieldD.setText( Double.toString( temp ) );
+            form.setParam( 3, temp );
+            mainGraphPanel.setFormula(form);
+        }
     }//GEN-LAST:event_paramSliderDStateChanged
 
-    private void paramSliderEStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderEStateChanged
-        paramFieldE.setText( Integer.toString(paramSliderE.getValue()) );
-        form.setE( paramSliderE.getValue() );
-    }//GEN-LAST:event_paramSliderEStateChanged
+    private void paramSliderCStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderCStateChanged
+        if( form.getParams().length > 2 ) {
+            double temp = paramSliderC.getValue() / 1000.0;
+            paramFieldC.setText( Double.toString( temp ) );
+            form.setParam( 2, temp);
+            mainGraphPanel.setFormula(form);
+        }
+    }//GEN-LAST:event_paramSliderCStateChanged
+
+    private void paramSliderBStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderBStateChanged
+        if( form.getParams().length > 1 ) {
+            double temp = paramSliderB.getValue() / 1000.0;
+            paramFieldB.setText( Double.toString( temp ) );
+            form.setParam( 1, temp);
+            mainGraphPanel.setFormula(form);
+        }
+    }//GEN-LAST:event_paramSliderBStateChanged
+
+    private void paramSliderAStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderAStateChanged
+        if( form.getParams().length > 0 ) {
+            double temp = paramSliderA.getValue() / 1000.0;
+            paramFieldA.setText( Double.toString( temp ) );
+            form.setParam( 0, temp);
+            mainGraphPanel.setFormula(form);
+        }
+    }//GEN-LAST:event_paramSliderAStateChanged
+
+    private void formulaBoxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_formulaBoxPropertyChange
+
+    }//GEN-LAST:event_formulaBoxPropertyChange
+
+    private void formulaBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formulaBoxActionPerformed
+        if( formulaBox.getSelectedIndex() != -1 ) {
+            switch( formulaBox.getSelectedIndex() ) {
+                case 0: form = new Const( new double[] { new Double( paramFieldA.getText() ) } );
+                break;
+                case 1: form = new Linear( new double[] { 
+                                    new Double( paramFieldA.getText() ), 
+                                    new Double( paramFieldB.getText() ) 
+                                    } );
+                break;
+                case 2: form = new Quadratic( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() )
+                                    } );
+                break;
+                case 3: form = new Cubic( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
+                break;
+                case 4: form = new Quartic( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() ),
+                                    new Double( paramFieldE.getText() )
+                                    } );
+                break;
+                case 5: form = new LnX( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() )
+                                    } );
+                break;
+                case 6: form = new PowerOfE( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() )
+                                    } );
+                break;
+                case 7: form = new PowerOfX( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() )
+                                    } );
+                break;
+                case 8: form = new X2( new double[] {
+                                    new Double( paramFieldA.getText() )
+                                    } );
+                break;
+                case 9: form = new X3( new double[] {
+                                    new Double( paramFieldA.getText() )
+                                    } );
+                break;
+                case 10: form = new Sin( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
+                break;
+                case 11: form = new Cos( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
+                break;
+                case 12: form = new Tan( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
+                break;
+                case 13: form = new Sec( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
+                break;
+                case 14: form = new Csc( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
+                break;
+                case 15: form = new Cot( new double[] {
+                                    new Double( paramFieldA.getText() ),
+                                    new Double( paramFieldB.getText() ),
+                                    new Double( paramFieldC.getText() ),
+                                    new Double( paramFieldD.getText() )
+                                    } );
+                break;
+                /*case 6: form = new Asin( new double[] { 1.0, 1.0 } );
+                break;
+                case 7: form = new Acos( new double[] { 1.0, 1.0 } );
+                break;
+                case 8: form = new Atan( new double[] { 1.0, 1.0 } );
+                break;
+                case 9: form = new Asec( new double[] { 1.0, 1.0 } );
+                break;
+                case 10: form = new Acsc( new double[] { 1.0, 1.0 } );
+                break;
+                case 11: form = new Acot( new double[] { 1.0, 1.0 } );
+                break;*/
+            }
+
+            formulaLabel.setText( form.getLabel() );
+            form.setColor( color );
+
+            paramSliderA.setEnabled( true );
+            paramSliderB.setEnabled( true );
+            paramSliderC.setEnabled( true );
+            paramSliderD.setEnabled( true );
+            paramSliderE.setEnabled( true );
+
+            switch( form.getParams().length ) {
+                case 1: paramSliderB.setEnabled( false );
+                        paramSliderB.setValue( 0 );
+                        paramFieldB.setText( "0.0" );
+                case 2: paramSliderC.setEnabled( false );
+                        paramSliderC.setValue( 0 );
+                        paramFieldC.setText( "0.0" );
+                case 3: paramSliderD.setEnabled( false );
+                        paramSliderD.setValue( 0 );
+                        paramFieldD.setText( "0.0" );
+                case 4: paramSliderE.setEnabled( false );
+                        paramSliderE.setValue( 0 );
+                        paramFieldE.setText( "0.0" );
+            }
+
+            mainGraphPanel.setGraphing( true );
+            mainGraphPanel.setFormula( form );
+        }
+
+    }//GEN-LAST:event_formulaBoxActionPerformed
 
     private void formulaBoxAncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formulaBoxAncestorRemoved
         // TODO add your handling code here:
     }//GEN-LAST:event_formulaBoxAncestorRemoved
 
-    private void formulaBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formulaBoxActionPerformed
-        switch( formulaBox.getSelectedIndex() ) {
-            case 0: form = new Sin( new double[] { 1.0, 1.0 } );
-                    break;
-            case 1: form = new Cos( new double[] { 1.0, 1.0 } );
-                    break;
-            case 2: form = new Tan( new double[] { 1.0, 1.0 } );
-                    break;
-            case 3: form = new Sec( new double[] { 1.0, 1.0 } );
-                    break;
-            case 4: form = new Csc( new double[] { 1.0, 1.0 } );
-                    break;
-            case 5: form = new Cot( new double[] { 1.0, 1.0 } );
-                    break;
-            /*case 6: form = new Asin( new double[] { 1.0, 1.0 } );
-                    break;
-            case 7: form = new Acos( new double[] { 1.0, 1.0 } );
-                    break;
-            case 8: form = new Atan( new double[] { 1.0, 1.0 } );
-                    break;
-            case 9: form = new Asec( new double[] { 1.0, 1.0 } );
-                    break;
-            case 10: form = new Acsc( new double[] { 1.0, 1.0 } );
-                    break;
-            case 11: form = new Acot( new double[] { 1.0, 1.0 } );
-                    break;*/
+    private void paramFieldAPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_paramFieldAPropertyChange
+        
+    }//GEN-LAST:event_paramFieldAPropertyChange
+
+    private void paramFieldBPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_paramFieldBPropertyChange
+        
+    }//GEN-LAST:event_paramFieldBPropertyChange
+
+    private void paramFieldCPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_paramFieldCPropertyChange
+        
+    }//GEN-LAST:event_paramFieldCPropertyChange
+
+    private void paramFieldDPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_paramFieldDPropertyChange
+        
+    }//GEN-LAST:event_paramFieldDPropertyChange
+
+    private void paramFieldEPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_paramFieldEPropertyChange
+        
+    }//GEN-LAST:event_paramFieldEPropertyChange
+
+    private void paramFieldAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paramFieldAActionPerformed
+        if( evt.getSource() != this ) {
+            Double temp = new Double ( paramFieldA.getText() );
+            form.setParam( 0, temp.doubleValue() );
+            mainGraphPanel.setFormula( form );
         }
-        formulaLabel.setText( form.getLabel() );
-        form.setColor( color );
-        
-        paramSliderA.setEnabled( false );
-        paramSliderB.setEnabled( false );
-        paramSliderC.setEnabled( false );
-        paramSliderD.setEnabled( false );
-        paramSliderE.setEnabled( false );
-        
-        switch( form.getParams().length ) {
-            case 5: paramSliderE.setEnabled( true );
-            case 4: paramSliderD.setEnabled( true );
-            case 3: paramSliderC.setEnabled( true );
-            case 2: paramSliderB.setEnabled( true );
-            case 1: paramSliderA.setEnabled( true );
+    }//GEN-LAST:event_paramFieldAActionPerformed
+
+    private void paramFieldBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paramFieldBActionPerformed
+        if( evt.getSource() != this ) {
+            Double temp = new Double ( paramFieldB.getText() );
+            form.setParam( 1, temp.doubleValue() );
+            mainGraphPanel.setFormula( form );
         }
-        
-        mainGraphPanel.setGraphing( true );
-        mainGraphPanel.setFormula( form );
-        
-    }//GEN-LAST:event_formulaBoxActionPerformed
+    }//GEN-LAST:event_paramFieldBActionPerformed
+
+    private void paramFieldCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paramFieldCActionPerformed
+        if( evt.getSource() != this ) {
+            Double temp = new Double ( paramFieldC.getText() );
+            form.setParam( 2, temp.doubleValue() );
+            mainGraphPanel.setFormula( form );
+        }
+    }//GEN-LAST:event_paramFieldCActionPerformed
+
+    private void paramFieldDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paramFieldDActionPerformed
+        if( evt.getSource() != this ) {
+            Double temp = new Double ( paramFieldD.getText() );
+            form.setParam( 3, temp.doubleValue() );
+            mainGraphPanel.setFormula( form );
+        }
+    }//GEN-LAST:event_paramFieldDActionPerformed
+
+    private void paramFieldEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paramFieldEActionPerformed
+        if( evt.getSource() != this ) {
+            Double temp = new Double ( paramFieldE.getText() );
+            form.setParam( 4, temp );
+            mainGraphPanel.setFormula( form );
+        }
+    }//GEN-LAST:event_paramFieldEActionPerformed
+
+    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
+        if( evt.getSource() != null ) {
+            mainGraphPanel.setGraphing( false );
+            mainGraphPanel.setScale( 10.0 );
+            mainGraphPanel.setOrigin( new java.awt.Point( 0, 0 ) );
+            paramSliderA.setValue( 0 );
+            paramSliderB.setValue( 0 );
+            paramSliderC.setValue( 0 );
+            paramSliderD.setValue( 0 );
+            paramSliderE.setValue( 0 );
+            scale = 10.0;
+            mainGraphPanel.setScale( scale );
+            form = null;
+            formulaBox.setSelectedIndex( -1 );
+            formulaLabel.setText(" ");
+        }
+    }//GEN-LAST:event_resetButtonActionPerformed
+
+    private void zoomInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoomInButtonActionPerformed
+        scale /= 2.0;
+        mainGraphPanel.setScale( scale );
+    }//GEN-LAST:event_zoomInButtonActionPerformed
+
+    private void zoomOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoomOutButtonActionPerformed
+        scale *= 2.0;
+        mainGraphPanel.setScale( scale );
+    }//GEN-LAST:event_zoomOutButtonActionPerformed
+
+    private void colorMenuItemBlueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemBlueActionPerformed
+        color = Color.BLUE;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemBlueActionPerformed
+
+    private void zoomInMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoomInMenuItemActionPerformed
+        scale /= 2.0;
+        mainGraphPanel.setScale( scale );
+    }//GEN-LAST:event_zoomInMenuItemActionPerformed
+
+    private void colorMenuItemBlackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemBlackActionPerformed
+        color = Color.BLACK;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemBlackActionPerformed
+
+    private void colorMenuItemMagentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemMagentaActionPerformed
+        color = Color.MAGENTA;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemMagentaActionPerformed
+
+    private void colorMenuItemCyanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemCyanActionPerformed
+        color = Color.CYAN;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemCyanActionPerformed
+
+    private void colorMenuItemDarkGrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemDarkGrayActionPerformed
+        color = Color.DARK_GRAY;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemDarkGrayActionPerformed
+
+    private void colorMenuItemGrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemGrayActionPerformed
+        color = Color.GRAY;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemGrayActionPerformed
+
+    private void colorMenuItemGreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemGreenActionPerformed
+        color = Color.GREEN;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemGreenActionPerformed
+
+    private void colorMenuItemLightGrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemLightGrayActionPerformed
+        color = Color.LIGHT_GRAY;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemLightGrayActionPerformed
+
+    private void colorMenuItemOrangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemOrangeActionPerformed
+        color = Color.ORANGE;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemOrangeActionPerformed
+
+    private void colorMenuItemPinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemPinkActionPerformed
+        color = Color.PINK;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemPinkActionPerformed
+
+    private void colorMenuItemRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemRedActionPerformed
+        color = Color.RED;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemRedActionPerformed
+
+    private void colorMenuItemYellowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemYellowActionPerformed
+        color = Color.YELLOW;
+        mainGraphPanel.setColor( color );
+    }//GEN-LAST:event_colorMenuItemYellowActionPerformed
+
+    private void zoomOutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoomOutMenuItemActionPerformed
+        scale *= 2.0;
+        mainGraphPanel.setScale( scale );
+    }//GEN-LAST:event_zoomOutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -396,14 +886,30 @@ public class GraphItGUI extends javax.swing.JFrame {
             }
         });
     }
-
-    private Formula form;
+    
+    private GraphPanel.Formula form;
     private Color color;
+    private double scale;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem colorMenuItemBlack;
+    private javax.swing.JMenuItem colorMenuItemBlue;
+    private javax.swing.JMenuItem colorMenuItemCyan;
+    private javax.swing.JMenuItem colorMenuItemDarkGray;
+    private javax.swing.JMenuItem colorMenuItemGray;
+    private javax.swing.JMenuItem colorMenuItemGreen;
+    private javax.swing.JMenuItem colorMenuItemLightGray;
+    private javax.swing.JMenuItem colorMenuItemMagenta;
+    private javax.swing.JMenuItem colorMenuItemOrange;
+    private javax.swing.JMenuItem colorMenuItemPink;
+    private javax.swing.JMenuItem colorMenuItemRed;
+    private javax.swing.JMenuItem colorMenuItemYellow;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JComboBox formulaBox;
     private javax.swing.JLabel formulaLabel;
-    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private GraphPanel.GraphPanel mainGraphPanel;
     private javax.swing.JTextField paramFieldA;
     private javax.swing.JTextField paramFieldB;
@@ -421,5 +927,10 @@ public class GraphItGUI extends javax.swing.JFrame {
     private javax.swing.JSlider paramSliderD;
     private javax.swing.JSlider paramSliderE;
     private javax.swing.JButton resetButton;
+    private javax.swing.JMenu viewMenu;
+    private javax.swing.JButton zoomInButton;
+    private javax.swing.JMenuItem zoomInMenuItem;
+    private javax.swing.JButton zoomOutButton;
+    private javax.swing.JMenuItem zoomOutMenuItem;
     // End of variables declaration//GEN-END:variables
 }

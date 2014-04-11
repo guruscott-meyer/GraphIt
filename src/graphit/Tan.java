@@ -6,6 +6,7 @@
 
 package graphit;
 
+import GraphPanel.Formula;
 import java.lang.Math;
 
 /**
@@ -16,12 +17,12 @@ public class Tan extends Formula {
     
     public Tan() {
         super();
-        label = "<html><i>y</i> = atanb<i>x</i>";
+        label = "<html><i>y</i> = a + btan( c<i>x</i> + d )";
     }
     
     public Tan( double params[] ) {
         super( params );
-        label = "<html><i>y</i> = atanb<i>x</i>";
+        label = "<html><i>y</i> = a + btan( c<i>x</i> + d )";
     }
     
     /**
@@ -31,7 +32,7 @@ public class Tan extends Formula {
      */
     @Override
     public double getY( double x ) {
-        return Params[0] * Math.tan( Params[1] * x );
+        return Params[0] + Params[1] * Math.tan( Params[2] * x + Params[3] );
     }
     
 }

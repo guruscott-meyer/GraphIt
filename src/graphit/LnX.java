@@ -1,14 +1,18 @@
 package graphit;
 
+import GraphPanel.Formula;
+
 public class LnX extends Formula
    {
    
     public LnX() {
         super();
+        label = "<html><i>y</i> = aln<i>x</i> + b</html>";
     }
     
     public LnX( double params[] ) {
         super( params );
+        label = "<html><i>y</i> = aln<i>x</i> + b</html>";
     }
     
    @Override

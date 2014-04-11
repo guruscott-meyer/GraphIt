@@ -1,14 +1,18 @@
 package graphit;
 
+import GraphPanel.Formula;
+
 public class PowerOfE extends Formula
    {
     
     public PowerOfE() {
         super();
+        label = "<html><i>y</i> = be<sup>a<i>x</i></sup></html>";
     }
     
     public PowerOfE( double params[] ) {
         super( params );
+        label = "<html><i>y</i> = be<sup>a<i>x</i></sup></html>";
     }
 
    @Override

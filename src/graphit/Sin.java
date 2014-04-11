@@ -6,6 +6,7 @@
 
 package graphit;
 
+import GraphPanel.Formula;
 import java.lang.Math;
 
 /**
@@ -16,12 +17,12 @@ public class Sin extends Formula {
     
     public Sin() {
         super();
-        label = "<html><i>y</i> = asinb<i>x</i>";
+        label = "<html><i>y</i> = a + bsin( c<i>x</i> + d )";
     }
     
     public Sin( double Params[] ) {
         super( Params );
-        label = "<html><i>y</i> = asinb<i>x</i>";
+        label = "<html><i>y</i> = a + bsin( c<i>x</i> + d )";
     }
     
     /**
@@ -31,6 +32,6 @@ public class Sin extends Formula {
      */
     @Override
     public double getY( double x ) {
-        return Params[0] * Math.sin( Params[1] * x );
+        return Params[0] + Params[1] * Math.sin( Params[2] * x + Params[3] );
     }
 }
