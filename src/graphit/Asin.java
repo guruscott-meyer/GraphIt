@@ -6,16 +6,16 @@
 
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 import java.lang.Math;
 /**
  *
  * @author admin
  */
-public class Asin extends Formula {
+public class Asin extends Function {
     
     public Asin() {
-        super();
+        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
         label = "<html><i>y</i> = a + bArcsin( c<i>x</i> + d )</html>";
     }
     

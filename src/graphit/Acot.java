@@ -6,17 +6,17 @@
 
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 import java.lang.Math;
 
 /**
  *
  * @author admin
  */
-public class Acot extends Formula {
+public class Acot extends Function {
     
     public Acot() {
-        super();
+        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
         label = "<html><i>y</i> = a + bArccot( c<i>x</i> + d )</html>";
     }
     

@@ -6,17 +6,17 @@
 
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 import java.lang.Math;
 
 /**
  *
  * @author admin
  */
-public class Asec extends Formula {
+public class Asec extends Function {
     
     public Asec() {
-        super();
+        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
         label = "<html><i>y</i> = a + bArcsec( c<i>x</i> + d )</html>";
     }
     

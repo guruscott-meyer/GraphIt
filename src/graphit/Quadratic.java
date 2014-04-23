@@ -1,12 +1,12 @@
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 
-public class Quadratic extends Formula
+public class Quadratic extends Function
    {
     
     public Quadratic() {
-        super();
+        super( new double[] { 0.0, 0.0, 0.0 } );
         label = "<html>a<i>x</i><sup>2</sup> + b<i>x</i> + c</html>";
     }
 

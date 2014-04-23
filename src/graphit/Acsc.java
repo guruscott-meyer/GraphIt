@@ -6,16 +6,16 @@
 
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 import java.lang.Math;
 /**
  *
  * @author admin
  */
-public class Acsc extends Formula {
+public class Acsc extends Function {
     
     public Acsc() {
-        super();
+        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
         label = "<html><i>y</i> = a + bArccsc( c<i>x</i> + d )</html>";
     }
     

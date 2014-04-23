@@ -1,12 +1,12 @@
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 
-public class LnX extends Formula
+public class LnX extends Function
    {
    
     public LnX() {
-        super();
+        super( new double[] { 0.0, 0.0 } );
         label = "<html><i>y</i> = aln<i>x</i> + b</html>";
     }
     

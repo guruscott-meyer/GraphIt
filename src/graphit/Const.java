@@ -6,16 +6,16 @@
 
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 
 /**
  *
  * @author Scott Meyer
  */
-public class Const extends Formula {
+public class Const extends Function {
     
     public Const() {
-        super();
+        super( new double[] { 0.0 } );
         label = "<html><i>y</i> = a<html>";
     }
     

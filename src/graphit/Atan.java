@@ -6,16 +6,16 @@
 
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 import java.lang.Math;
 /**
  *
  * @author admin
  */
-public class Atan extends Formula {
+public class Atan extends Function {
     
     public Atan() {
-        super();
+        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
         label = "<html><i>y</i> = a + bArctan( c<i>x</i> + d )</html>";
     }
     

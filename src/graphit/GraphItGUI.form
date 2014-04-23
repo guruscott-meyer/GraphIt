@@ -14,6 +14,14 @@
             <Property name="text" type="java.lang.String" value="View"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="colorMenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Color"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="zoomInMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Zoom In"/>
@@ -30,111 +38,22 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="zoomOutMenuItemActionPerformed"/>
               </Events>
             </MenuItem>
-            <Menu class="javax.swing.JMenu" name="jMenu2">
+            <MenuItem class="javax.swing.JMenuItem" name="newFuncMenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Color"/>
+                <Property name="text" type="java.lang.String" value="New Function"/>
               </Properties>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemBlack">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Black"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemBlackActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemBlue">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Blue"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemBlueActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemCyan">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Cyan"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemCyanActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemDarkGray">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Dark Gray"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemDarkGrayActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemGray">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Gray"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemGrayActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemGreen">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Green"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemGreenActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemLightGray">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Light Gray"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemLightGrayActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemMagenta">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Magenta"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemMagentaActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemOrange">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Orange"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemOrangeActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemPink">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Pink"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemPinkActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemRed">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Red"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemRedActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="colorMenuItemYellow">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Yellow"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colorMenuItemYellowActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
-                </MenuItem>
-              </SubComponents>
-            </Menu>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newFuncMenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="clearMenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clear"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearMenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
       </SubComponents>
@@ -164,7 +83,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="controlPanel" min="-2" max="-2" attributes="0"/>
+              <Component id="controlScrollPane" min="-2" pref="220" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="mainGraphPanel" max="32767" attributes="0"/>
           </Group>
@@ -175,342 +94,48 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="controlPanel" max="32767" attributes="0"/>
                   <Component id="mainGraphPanel" max="32767" attributes="0"/>
+                  <Component id="controlScrollPane" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="controlPanel">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="paramSliderA" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="paramSliderB" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="paramSliderC" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="paramSliderD" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="paramSliderE" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="formulaBox" max="32767" attributes="0"/>
-                      <Component id="formulaLabel" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="zoomInButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="zoomOutButton" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="paramLabelA" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="paramFieldA" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="paramLabelB" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="paramFieldB" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="paramLabelC" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="paramFieldC" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="paramLabelD" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="paramFieldD" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="paramLabelE" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="paramFieldE" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Component id="resetButton" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="formulaBox" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="formulaLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="paramLabelA" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="paramFieldA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="paramSliderA" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="paramLabelB" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="paramFieldB" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="paramSliderB" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="paramLabelC" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="paramFieldC" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="paramSliderC" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="paramLabelD" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="paramFieldD" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="paramSliderD" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="paramLabelE" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="paramFieldE" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="paramSliderE" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="zoomInButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="zoomOutButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="34" max="32767" attributes="0"/>
-                  <Component id="resetButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JComboBox" name="formulaBox">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="22">
-                <StringItem index="0" value="Constant"/>
-                <StringItem index="1" value="Line"/>
-                <StringItem index="2" value="Quadratic"/>
-                <StringItem index="3" value="Cubic"/>
-                <StringItem index="4" value="Quartic"/>
-                <StringItem index="5" value="lnX"/>
-                <StringItem index="6" value="Power of E"/>
-                <StringItem index="7" value="Power of X"/>
-                <StringItem index="8" value="X Squared"/>
-                <StringItem index="9" value="X Cubed"/>
-                <StringItem index="10" value="Sine"/>
-                <StringItem index="11" value="Cosine"/>
-                <StringItem index="12" value="Tangent"/>
-                <StringItem index="13" value="Secant"/>
-                <StringItem index="14" value="Cosecant"/>
-                <StringItem index="15" value="Cotangent"/>
-                <StringItem index="16" value="Arcsine"/>
-                <StringItem index="17" value="Arccosine"/>
-                <StringItem index="18" value="Arctangent"/>
-                <StringItem index="19" value="Arcsecant"/>
-                <StringItem index="20" value="Arccosecant"/>
-                <StringItem index="21" value="Arccotangent"/>
-              </StringArray>
-            </Property>
-            <Property name="selectedIndex" type="int" value="-1"/>
-          </Properties>
-          <Events>
-            <EventHandler event="ancestorRemoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="formulaBoxAncestorRemoved"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="formulaBoxActionPerformed"/>
-            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="formulaBoxPropertyChange"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="formulaLabel">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value=" "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="paramLabelA">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="a:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="paramFieldA">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="0.0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paramFieldAActionPerformed"/>
-            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="paramFieldAPropertyChange"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JSlider" name="paramSliderA">
-          <Properties>
-            <Property name="maximum" type="int" value="10000"/>
-            <Property name="minimum" type="int" value="-10000"/>
-            <Property name="value" type="int" value="0"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="paramSliderAStateChanged"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="paramLabelB">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="b:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="paramFieldB">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="0.0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paramFieldBActionPerformed"/>
-            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="paramFieldBPropertyChange"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JSlider" name="paramSliderB">
-          <Properties>
-            <Property name="maximum" type="int" value="10000"/>
-            <Property name="minimum" type="int" value="-10000"/>
-            <Property name="value" type="int" value="0"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="paramSliderBStateChanged"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="paramLabelC">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="c:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="paramFieldC">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="0.0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paramFieldCActionPerformed"/>
-            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="paramFieldCPropertyChange"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JSlider" name="paramSliderC">
-          <Properties>
-            <Property name="maximum" type="int" value="10000"/>
-            <Property name="minimum" type="int" value="-10000"/>
-            <Property name="value" type="int" value="0"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="paramSliderCStateChanged"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="paramLabelD">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="d:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="paramFieldD">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="0.0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paramFieldDActionPerformed"/>
-            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="paramFieldDPropertyChange"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JSlider" name="paramSliderD">
-          <Properties>
-            <Property name="maximum" type="int" value="10000"/>
-            <Property name="minimum" type="int" value="-10000"/>
-            <Property name="value" type="int" value="0"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="paramSliderDStateChanged"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="paramLabelE">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="e:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="paramFieldE">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="0.0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paramFieldEActionPerformed"/>
-            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="paramFieldEPropertyChange"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JSlider" name="paramSliderE">
-          <Properties>
-            <Property name="maximum" type="int" value="10000"/>
-            <Property name="minimum" type="int" value="-10000"/>
-            <Property name="value" type="int" value="0"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="paramSliderEStateChanged"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="resetButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Reset"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="zoomInButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Zoom In"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="zoomInButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="zoomOutButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Zoom Out"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="zoomOutButtonActionPerformed"/>
-          </Events>
-        </Component>
-      </SubComponents>
-    </Container>
     <Container class="GraphPanel.GraphPanel" name="mainGraphPanel">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="496" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="494" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="430" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="controlScrollPane">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="controlPanel">
+          <Properties>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[220, 32767]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[220, 0]"/>
+            </Property>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="true"/>
+          </Layout>
+        </Container>
+      </SubComponents>
     </Container>
   </SubComponents>
 </Form>

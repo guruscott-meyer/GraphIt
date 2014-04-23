@@ -1,12 +1,12 @@
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 
-public class PowerOfE extends Formula
+public class PowerOfE extends Function
    {
     
     public PowerOfE() {
-        super();
+        super( new double[] { 0.0, 0.0 } );
         label = "<html><i>y</i> = be<sup>a<i>x</i></sup></html>";
     }
     

@@ -6,17 +6,17 @@
 
 package graphit;
 
-import GraphPanel.Formula;
+import GraphPanel.Function;
 import java.lang.Math;
 
 /**
  *
  * @author admin
  */
-public class Cot extends Formula{
+public class Cot extends Function{
     
     public Cot() {
-        super();
+        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
         label = "<html><i>y</i> = a + bcot( c<i>x</i> + d )";
     }
     
