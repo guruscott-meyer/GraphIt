@@ -13,16 +13,19 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Cos extends Function {
+public class Cos extends OneArgumentFunction {
     
     public Cos() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + bcos( c<i>x</i> + d )";
+        super();
     }
     
-    public Cos( double params[] ) {
-        super( params );
-        label = "<html><i>y</i> = a + bcos( c<i>x</i> + d )";
+    public Cos( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    @Override
+    public String getLabel() {
+        return "<html>cos( </html>" + func.getLabel() + " )";
     }
     
     /**
@@ -32,6 +35,6 @@ public class Cos extends Function {
      */
     @Override
     public double getY( double x ) {
-        return Params[0] + Params[1] * Math.cos( Params[2] * x + Params[3] );
+        return Math.cos( func.getY( x ) );
     }
 }

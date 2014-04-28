@@ -1,24 +1,22 @@
 package graphit;
 
-import GraphPanel.Function;
-
-public class PowerOfE extends Function
+public class PowerOfE extends OneArgumentFunction
    {
     
     public PowerOfE() {
-        super( new double[] { 0.0, 0.0 } );
-        label = "<html><i>y</i> = be<sup>a<i>x</i></sup></html>";
-    }
-    
-    public PowerOfE( double params[] ) {
-        super( params );
-        label = "<html><i>y</i> = be<sup>a<i>x</i></sup></html>";
+        super( new Product( new Parameter("a"), new Exp( new Product( new Parameter("b"), new X() ))));
     }
 
+    
+    @Override
+    public String getLabel() {
+        return func.getLabel();
+    }
+    
    @Override
    public double getY( double x )
       {
-      return Params[1] * Math.exp( Params[0] * x );
+      return func.getY( x );
       }
 
    }

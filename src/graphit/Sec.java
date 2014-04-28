@@ -13,19 +13,21 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Sec extends Function {
+public class Sec extends OneArgumentFunction {
     
     public Sec() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + bsec( c<i>x</i> + d )";
+        super();
     }
     
-    public Sec( double params[] ) {
-        super( params );
-        label = "<html><i>y</i> = a + bsec( c<i>x</i> + d )";
+    public Sec( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    public String getLabel() {
+        return "<html>Arccos( </html>" + func.getLabel() + " )";
     }
     
     public double getY( double x ) {
-        return Params[0] + Params[1] / Math.sin( Params[2] * x + Params[3] );
+        return 1 / Math.sin( func.getY( x ) );
     }
 }

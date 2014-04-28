@@ -13,21 +13,23 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Acos extends Function {
+public class Acos extends OneArgumentFunction {
     
     public Acos() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + bArccos( c<i>x</i> + d )</html>";
+        super();
     }
     
-    public Acos( double Params[] ) {
-        super( Params );
-        label = "<html><i>y</i> = a + bArccos( c<i>x</i> + d )</html>";
+    public Acos( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    public String getLabel() {
+        return "<html>Arccos( </html>" + func.getLabel() + " )";
     }
     
     @Override
     public double getY( double x ) {
-        return Params[0] + Params[1] * Math.acos(Params[2] * x + Params[3]);
+        return Math.acos( func.getY( x ) );
     }
     
 }

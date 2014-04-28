@@ -13,16 +13,18 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Sin extends Function {
+public class Sin extends OneArgumentFunction {
     
     public Sin() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + bsin( c<i>x</i> + d )";
+        super();
     }
     
-    public Sin( double Params[] ) {
-        super( Params );
-        label = "<html><i>y</i> = a + bsin( c<i>x</i> + d )";
+    public Sin( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    public String getLabel() {
+        return "<html>sin( </html>" + func.getLabel() + " )";
     }
     
     /**
@@ -32,6 +34,6 @@ public class Sin extends Function {
      */
     @Override
     public double getY( double x ) {
-        return Params[0] + Params[1] * Math.sin( Params[2] * x + Params[3] );
+        return Math.sin( func.getY( x ) );
     }
 }

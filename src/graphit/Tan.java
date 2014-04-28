@@ -13,16 +13,18 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Tan extends Function {
+public class Tan extends OneArgumentFunction {
     
     public Tan() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + btan( c<i>x</i> + d )";
+        super();
     }
     
-    public Tan( double params[] ) {
-        super( params );
-        label = "<html><i>y</i> = a + btan( c<i>x</i> + d )";
+    public Tan( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    public String getLabel() {
+        return "<html>tan( </html>" + func.getLabel() + " )";
     }
     
     /**
@@ -32,7 +34,7 @@ public class Tan extends Function {
      */
     @Override
     public double getY( double x ) {
-        return Params[0] + Params[1] * Math.tan( Params[2] * x + Params[3] );
+        return Math.tan( func.getY( x ) );
     }
     
 }

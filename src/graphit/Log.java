@@ -7,29 +7,28 @@
 package graphit;
 
 import GraphPanel.Function;
-import java.lang.Math;
 
 /**
  *
  * @author admin
  */
-public class Csc extends OneArgumentFunction {
+public class Log extends OneArgumentFunction{
     
-    public Csc() {
+    public Log() {
         super();
     }
     
-    public Csc( Function newFunc ) {
+    public Log(Function newFunc ) {
         super( newFunc );
     }
     
     public String getLabel() {
-        return "<html>csc( </html>" + func.getLabel() + " )";
+        return "ln( " + func.getLabel() + " )";
     }
     
-    @Override
     public double getY( double x ) {
-        return 1 / Math.cos( func.getY( x ) );
+        if( x == 0 ) x = 0.000000001;
+        return Math.log( func.getY( x ) );
     }
     
 }

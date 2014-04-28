@@ -12,21 +12,23 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Acsc extends Function {
+public class Acsc extends OneArgumentFunction {
     
     public Acsc() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + bArccsc( c<i>x</i> + d )</html>";
+        super();
     }
     
-    public Acsc( double Params[] ) {
-        super( Params );
-        label = "<html><i>y</i> = a + bArccsc( c<i>x</i> + d )</html>";
+    public Acsc( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    public String getLabel() {
+        return "<html>Arccsc( </html>" + func.getLabel() + " )";
     }
     
     @Override
     public double getY( double x ) {
-        return Params[0] + Params[1] / Math.acos(Params[2] * x + Params[3]);
+        return 1 / Math.acos( func.getY( x ) );
     }
     
 }

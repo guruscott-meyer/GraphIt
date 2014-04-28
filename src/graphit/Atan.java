@@ -12,21 +12,23 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Atan extends Function {
+public class Atan extends OneArgumentFunction {
     
     public Atan() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + bArctan( c<i>x</i> + d )</html>";
+        super();
     }
     
-    public Atan( double Params[] ) {
-        super( Params );
-        label = "<html><i>y</i> = a + bArctan( c<i>x</i> + d )</html>";
+    public Atan( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    public String getLabel() {
+        return "<html>Arctan( </html>" + func.getLabel() + " )";
     }
     
     @Override
     public double getY( double x ) {
-        return Params[0] + Params[1] * Math.atan(Params[2] * x + Params[3]);
+        return Math.atan( func.getY( x ) );
     }
     
 }

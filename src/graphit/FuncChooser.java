@@ -6,8 +6,9 @@
 
 package graphit;
 
-import java.beans.*;
 import GraphPanel.Function.*;
+import java.awt.Color;
+import java.beans.*;
 import java.util.ArrayList;
 import javax.swing.*;
 
@@ -100,7 +101,7 @@ public class FuncChooser extends javax.swing.JPanel {
         GraphPanel.Function oldFunc = function;
         sliderPanel.removeAll();
         switch( functionBox.getSelectedIndex() ) {
-            case 0: function = new Const();
+            case 0: function = new Constant();
                 break;
             case 1: function = new Linear();
                 break;
@@ -144,14 +145,19 @@ public class FuncChooser extends javax.swing.JPanel {
                 break;
             case 21: function = new Acot();
         }
-        functionLabel.setText( function.getLabel() );
-        for( int i = 0; i < function.getParams().length; i++ ) {
-            ParamSlider newParamSlider = new ParamSlider( function, i );
-            String newLabel = new String( Character.toChars( Character.codePointAt( new char[] { 'a' }, 0 ) + i) );
-            //String newLabel = new String( Integer.toString(Character.codePointAt( new char[] { 'a' }, 0 ) + i) );
-            //System.out.println( newLabel );
-            newParamSlider.setLabel( newLabel );
-            sliderPanel.add( newParamSlider );
+        functionLabel.setText( "<html><i>y</i> = " + function.getLabel() + "</html>");
+        if(function.getParams() != null )
+            for( int i = 0; i < function.getParamCount(); i++ ) {
+                ParamSlider newParamSlider = new ParamSlider( function, i );
+                String newLabel = new String( Character.toChars( Character.codePointAt( new char[] { 'a' }, 0 ) + i) );
+                //String newLabel = new String( Integer.toString(Character.codePointAt( new char[] { 'a' }, 0 ) + i) );
+                //System.out.println( newLabel );
+                newParamSlider.setLabel( newLabel );
+                sliderPanel.add( newParamSlider );
+            }
+        Color newColor = JColorChooser.showDialog( this, "Function Color", function.getColor() );
+        if( newColor != null ) {
+            function.setColor( newColor );
         }
         support.firePropertyChange( "function", oldFunc, function );
     }//GEN-LAST:event_functionBoxActionPerformed

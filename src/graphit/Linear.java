@@ -1,24 +1,21 @@
 package graphit;
 
-import GraphPanel.Function;
-
-public class Linear extends Function
+public class Linear extends OneArgumentFunction
    {
 
     public Linear() {
-        super( new double[] { 0.0, 0.0 } );
-        label = "<html><i>y</i> = a<i>x</i> + b</html>";
+        super( new Sum( new Product( new Parameter("b"), new X() ), new Parameter("a") ) );
     }
     
-    public Linear( double params[] ) {
-        super( params );
-        label = "<html><i>y</i> = a<i>x</i> + b</html>";
+    @Override
+    public String getLabel() {
+        return func.getLabel();
     }
     
    @Override
    public double getY( double x )
       {
-      return Params[0] * x + Params[1];
+      return func.getY( x );
       }
 
    }

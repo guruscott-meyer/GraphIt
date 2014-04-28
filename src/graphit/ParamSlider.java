@@ -19,7 +19,7 @@ public class ParamSlider extends javax.swing.JPanel {
      * Creates new form ParamSlider
      */
     public ParamSlider() {
-        function = new Const();
+        function = new Constant();
         index = 0;
         initComponents();
     }

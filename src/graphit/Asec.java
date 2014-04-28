@@ -13,21 +13,23 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Asec extends Function {
+public class Asec extends OneArgumentFunction {
     
     public Asec() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + bArcsec( c<i>x</i> + d )</html>";
+        super();
     }
     
-    public Asec( double Params[] ) {
-        super( Params );
-        label = "<html><i>y</i> = a + bArcsec( c<i>x</i> + d )</html>";
+    public Asec( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    public String getLabel() {
+        return "<html>Arcsec( </html>" + func.getLabel() + " )";
     }
     
     @Override
     public double getY( double x ) {
-        return Params[0] + Params[1] / Math.asin(Params[2] * x + Params[3]);
+        return 1 / Math.asin( func.getY( x ) );
     }
     
 }

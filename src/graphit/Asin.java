@@ -12,21 +12,23 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Asin extends Function {
+public class Asin extends OneArgumentFunction {
     
     public Asin() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + bArcsin( c<i>x</i> + d )</html>";
+        super();
     }
     
-    public Asin( double Params[] ) {
-        super( Params );
-        label = "<html><i>y</i> = a + bArcsin( c<i>x</i> + d )</html>";
+    public Asin( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    public String getLabel() {
+        return "<html>Arcsin( </html>" + func.getLabel() + " )";
     }
     
     @Override
     public double getY( double x ) {
-        return Params[0] + Params[1] * Math.asin(Params[2] * x + Params[3]);
+        return Math.asin( func.getY( x ) );
     }
     
 }

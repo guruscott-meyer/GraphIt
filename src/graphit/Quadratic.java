@@ -1,18 +1,15 @@
 package graphit;
 
-import GraphPanel.Function;
-
-public class Quadratic extends Function
+public class Quadratic extends OneArgumentFunction
    {
     
     public Quadratic() {
-        super( new double[] { 0.0, 0.0, 0.0 } );
-        label = "<html>a<i>x</i><sup>2</sup> + b<i>x</i> + c</html>";
+        super( new Sum( new Product( new Parameter("c"), new PowerOf( new X(), new Constant(2.0) )), new Linear() ) );
     }
-
-    public Quadratic( double params[] ) {
-        super( params );
-        label = "<html>a<i>x</i><sup>2</sup> + b<i>x</i> + c</html>";
+    
+    @Override
+    public String getLabel() {
+        return func.getLabel();
     }
     
     /**
@@ -23,7 +20,7 @@ public class Quadratic extends Function
     @Override
    public double getY( double x )
       {
-      return Params[2] + Params[1] * x + Params[0] * x * x;
+      return func.getY( x );
       }
 
 

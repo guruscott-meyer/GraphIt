@@ -2,23 +2,23 @@ package graphit;
 
 import GraphPanel.Function;
 
-public class X3 extends Function
+public class X3 extends OneArgumentFunction
    {
     
     public X3() {
-        super( new double[] { 0.0 } );
-        label = "<html><i>y</i> = a<i>x</i><sup>3</sup></html>";
+        super( new Product( new Parameter("A"), new PowerOf( new X(), new Constant( 3.0 ) )));
     }
     
-    public X3( double params[]) {
-        super( params );
-        label = "<html><i>y</i> = a<i>x</i><sup>3</sup></html>";
+    @Override
+    
+    public String getLabel() {
+        return func.getLabel();
     }
     
     @Override
    public double getY( double x )
       {
-      return Params[0] * Math.pow( x, 3.0 );
+      return func.getY( x );
       }
-
+   
    }

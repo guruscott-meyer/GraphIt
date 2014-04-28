@@ -13,19 +13,21 @@ import java.lang.Math;
  *
  * @author admin
  */
-public class Cot extends Function{
+public class Cot extends OneArgumentFunction{
     
     public Cot() {
-        super( new double[] { 0.0, 0.0, 0.0, 0.0 } );
-        label = "<html><i>y</i> = a + bcot( c<i>x</i> + d )";
+        super();
     }
     
-    public Cot( double params[] ) {
-        super( params );
-        label = "<html><i>y</i> = a + bcot( c<i>x</i> + d )";
+    public Cot( Function newFunc ) {
+        super( newFunc );
+    }
+    
+    public String getLabel() {
+        return "<html>cot( </html>" + func.getLabel() + " )";
     }
     
     public double getY( double x ){
-        return Params[0] + Params[1] / Math.tan( Params[2] * x + Params[3] );
+        return 1 / Math.tan( func.getY( x ) );
     }
 }
