@@ -22,10 +22,12 @@ public class Product extends TwoArgumentFunction {
         super( newFuncA, newFuncB );
     }
     
+    @Override
     public String getLabel() {
         return funcA.getLabel() + funcB.getLabel();
     }
     
+    @Override
     public double getY( double x ) {
         return funcA.getY( x ) * funcB.getY ( x );
     }
