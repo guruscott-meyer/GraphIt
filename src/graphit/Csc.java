@@ -24,7 +24,7 @@ public class Csc extends OneArgumentFunction {
     }
     
     public String getLabel() {
-        return "<html>csc( </html>" + func.getLabel() + " )";
+        return "csc( " + func.getLabel() + " )";
     }
     
     @Override

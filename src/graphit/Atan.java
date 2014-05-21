@@ -23,7 +23,7 @@ public class Atan extends OneArgumentFunction {
     }
     
     public String getLabel() {
-        return "<html>Arctan( </html>" + func.getLabel() + " )";
+        return "Arctan( " + func.getLabel() + " )";
     }
     
     @Override

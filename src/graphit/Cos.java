@@ -25,7 +25,7 @@ public class Cos extends OneArgumentFunction {
     
     @Override
     public String getLabel() {
-        return "<html>cos( </html>" + func.getLabel() + " )";
+        return "cos( " + func.getLabel() + " )";
     }
     
     /**

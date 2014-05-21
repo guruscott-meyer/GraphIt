@@ -23,7 +23,7 @@ public class Asin extends OneArgumentFunction {
     }
     
     public String getLabel() {
-        return "<html>Arcsin( </html>" + func.getLabel() + " )";
+        return "Arcsin( " + func.getLabel() + " )";
     }
     
     @Override

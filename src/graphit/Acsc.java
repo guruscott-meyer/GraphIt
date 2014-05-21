@@ -23,7 +23,7 @@ public class Acsc extends OneArgumentFunction {
     }
     
     public String getLabel() {
-        return "<html>Arccsc( </html>" + func.getLabel() + " )";
+        return "Arccsc( " + func.getLabel() + " )";
     }
     
     @Override

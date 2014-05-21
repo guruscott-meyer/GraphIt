@@ -199,10 +199,8 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GraphItGUI().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new GraphItGUI().setVisible(true);
         });
     }
     

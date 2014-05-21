@@ -24,7 +24,7 @@ public class Sec extends OneArgumentFunction {
     }
     
     public String getLabel() {
-        return "<html>Arccos( </html>" + func.getLabel() + " )";
+        return "sec( " + func.getLabel() + " )";
     }
     
     public double getY( double x ) {

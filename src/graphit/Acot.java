@@ -24,7 +24,7 @@ public class Acot extends OneArgumentFunction {
     }
     
     public String getLabel() {
-        return "<html>Arccot( </html>" + func.getLabel() + " )";
+        return "Arccot( " + func.getLabel() + " )";
     }
     
     @Override

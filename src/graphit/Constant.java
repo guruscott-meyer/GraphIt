@@ -26,6 +26,7 @@ public class Constant extends Function {
         value = newValue;
     }
     
+    @Override
     public String getLabel() {
         if( value % 1.0 == 0 ) return String.valueOf( new Double(value).intValue() );
         else return String.valueOf(value);

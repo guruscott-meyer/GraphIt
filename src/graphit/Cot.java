@@ -24,7 +24,7 @@ public class Cot extends OneArgumentFunction{
     }
     
     public String getLabel() {
-        return "<html>cot( </html>" + func.getLabel() + " )";
+        return "cot( " + func.getLabel() + " )";
     }
     
     public double getY( double x ){

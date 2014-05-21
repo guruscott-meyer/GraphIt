@@ -24,7 +24,7 @@ public class Sin extends OneArgumentFunction {
     }
     
     public String getLabel() {
-        return "<html>sin( </html>" + func.getLabel() + " )";
+        return "sin( " + func.getLabel() + " )";
     }
     
     /**

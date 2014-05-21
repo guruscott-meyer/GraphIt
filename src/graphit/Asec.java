@@ -24,7 +24,7 @@ public class Asec extends OneArgumentFunction {
     }
     
     public String getLabel() {
-        return "<html>Arcsec( </html>" + func.getLabel() + " )";
+        return "Arcsec( " + func.getLabel() + " )";
     }
     
     @Override

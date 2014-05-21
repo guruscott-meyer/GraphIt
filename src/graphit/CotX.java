@@ -6,25 +6,19 @@
 
 package graphit;
 
-import GraphPanel.Function;
-import java.lang.Math;
-
 /**
  *
  * @author admin
  */
-public class Tan extends OneArgumentFunction {
+public class CotX extends OneArgumentFunction{
     
-    public Tan() {
-        super();
+    public CotX() {
+        super( new Sum( new Parameter("a"), new Product( new Parameter("b"), new Cot( new Sum( new Product( new Parameter("c"), new X() ), new Parameter("d"))))));
     }
     
-    public Tan( Function newFunc ) {
-        super( newFunc );
-    }
-    
+    @Override
     public String getLabel() {
-        return "tan( " + func.getLabel() + " )";
+        return func.getLabel();
     }
     
     /**
@@ -33,8 +27,9 @@ public class Tan extends OneArgumentFunction {
      * @return
      */
     @Override
-    public double getY( double x ) {
-        return Math.tan( func.getY( x ) );
-    }
+   public double getY( double x )
+      {
+      return func.getY( x );
+      }
     
 }

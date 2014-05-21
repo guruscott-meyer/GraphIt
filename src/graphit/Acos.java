@@ -24,7 +24,7 @@ public class Acos extends OneArgumentFunction {
     }
     
     public String getLabel() {
-        return "<html>Arccos( </html>" + func.getLabel() + " )";
+        return "Arccos( " + func.getLabel() + " )";
     }
     
     @Override
