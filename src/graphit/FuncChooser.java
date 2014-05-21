@@ -50,8 +50,7 @@ public class FuncChooser extends javax.swing.JPanel {
         functionLabel = new javax.swing.JLabel();
         sliderPanel = new javax.swing.JPanel();
 
-        functionBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Constant", "Line", "Quadratic", "Cubic", "Quartic", "lnX", "Power of E", "Power of X", "X Squared", "X Cubed", "Sine", "Cosine", "Tangent", "Secant", "Cosecant", "Cotangent", "Arcsine", "Arccosine", "Arctangent", "Arcsecant", "Arccosecant", "Arccotangent" }));
-        functionBox.setSelectedIndex(-1);
+        functionBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Function Builder", "Line", "Quadratic", "Cubic", "Quartic", "lnX", "Power of E", "Power of X", "X Squared", "X Cubed", "Sine", "Cosine", "Tangent", "Secant", "Cosecant", "Cotangent", "Arcsine", "Arccosine", "Arctangent", "Arcsecant", "Arccosecant", "Arccotangent" }));
         functionBox.setMaximumSize(new java.awt.Dimension(200, 22));
         functionBox.setMinimumSize(new java.awt.Dimension(200, 22));
         functionBox.setPreferredSize(new java.awt.Dimension(200, 22));

@@ -6,7 +6,7 @@ public class X3 extends OneArgumentFunction
    {
     
     public X3() {
-        super( new Product( new Parameter("A"), new PowerOf( new X(), new Constant( 3.0 ) )));
+        super( new Product( new Parameter("a"), new PowerOf( new X(), new Constant( 3.0 ) )));
     }
     
     @Override

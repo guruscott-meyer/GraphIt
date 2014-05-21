@@ -4,7 +4,7 @@ public class X2 extends OneArgumentFunction
    {
 
     public X2() {
-        super( new Product( new Parameter("A"), new PowerOf( new X(), new Constant( 2.0 ) )));
+        super( new Product( new Parameter("a"), new PowerOf( new X(), new Constant( 2.0 ) )));
         }
     
     @Override

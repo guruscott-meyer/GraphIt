@@ -1,10 +1,11 @@
+
 package graphit;
 
 public class Linear extends OneArgumentFunction
    {
 
     public Linear() {
-        super( new Sum( new Product( new Parameter("b"), new X() ), new Parameter("a") ) );
+        super( new Sum( new Parameter("a"), new Product( new Parameter("b"), new X() ) ) );
     }
     
     @Override
