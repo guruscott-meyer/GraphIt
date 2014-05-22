@@ -89,13 +89,14 @@ public class ParamSlider extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void paramSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderStateChanged
-        double temp = paramSlider.getValue() / 1000.0;
+        double temp = paramSlider.getValue() / 1000f;
         paramField.setText( Double.toString( temp ) );
         function.setParam( index, temp);
     }//GEN-LAST:event_paramSliderStateChanged
 
     private void paramFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paramFieldActionPerformed
         Double temp = new Double ( paramField.getText() );
+        paramSlider.setValue( (int)( temp * 1000f ) );
         function.setParam( index, temp.doubleValue() );
     }//GEN-LAST:event_paramFieldActionPerformed
 
