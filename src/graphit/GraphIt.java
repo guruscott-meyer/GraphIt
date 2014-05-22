@@ -19,7 +19,7 @@ public class GraphIt {
     public static void main(String[] args) {
         
         gui = new GraphItGUI();
-        gui.show();
+        gui.setVisible( true );
     }
     
 }
