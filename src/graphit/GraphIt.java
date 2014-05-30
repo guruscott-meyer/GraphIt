@@ -8,7 +8,7 @@ package graphit;
 
 /**
  *
- * @author admin
+ * @author Scott Meyer
  */
 public class GraphIt {
 

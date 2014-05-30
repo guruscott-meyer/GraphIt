@@ -7,7 +7,7 @@
 package graphit;
 
 import GraphPanel.GraphPanel.*;
-import GraphPanel.Function.*;
+import GraphPanel.FunctionFramework.*;
 import java.awt.Color;
 import javax.swing.JColorChooser;
 import java.util.*;
@@ -150,7 +150,7 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
     }//GEN-LAST:event_zoomOutMenuItemActionPerformed
 
     private void colorMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorMenuItemActionPerformed
-//        Color newColor = JColorChooser.showDialog( rootPane, "Function Color", form.getColor() );
+//        Color newColor = JColorChooser.showDialog( rootPane, "FunctionFramework Color", form.getColor() );
 //        if( newColor != null ) {
 //            form.setColor( newColor );
 //            defaultColor = newColor;
@@ -158,7 +158,7 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
     }//GEN-LAST:event_colorMenuItemActionPerformed
 
     private void newFuncMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFuncMenuItemActionPerformed
-        FuncChooser temp = new FuncChooser();
+        FuncChooser temp = new FuncChooser( mainGraphPanel);
         temp.addPropertyChangeListener( this );
         controlPanel.add( temp );
         pack();
@@ -207,14 +207,15 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
     @Override
     public void propertyChange( PropertyChangeEvent e ) {
         if( e.getOldValue() != null ) funcList.remove( e.getOldValue() );
-        funcList.add( (GraphPanel.Function) e.getNewValue() );
+        funcList.add( (GraphPanel.FunctionFramework) e.getNewValue() );
         //System.out.println( funcList.size() );
         mainGraphPanel.setFunctionList( funcList );
         mainGraphPanel.setGraphing( true );
+        mainGraphPanel.repaint();
         //pack();
     }
     
-    private ArrayList<GraphPanel.Function> funcList;
+    private ArrayList<GraphPanel.FunctionFramework> funcList;
     private double scale;
     private Color defaultColor;
     // Variables declaration - do not modify//GEN-BEGIN:variables

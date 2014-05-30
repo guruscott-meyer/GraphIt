@@ -6,12 +6,12 @@
 
 package graphit;
 
-import GraphPanel.Function;
+import GraphPanel.Parameter;
 
 
 /**
  *
- * @author admin
+ * @author Scott Meyer
  */
 public class ParamSlider extends javax.swing.JPanel {
 
@@ -19,14 +19,12 @@ public class ParamSlider extends javax.swing.JPanel {
      * Creates new form ParamSlider
      */
     public ParamSlider() {
-        function = new Constant();
-        index = 0;
+        parameter = new Parameter();
         initComponents();
     }
     
-    public ParamSlider( Function newFunc, int newIndex ) {
-        function = newFunc;
-        index = newIndex;
+    public ParamSlider( Parameter newParam ) {
+        parameter = newParam;
         initComponents();
     }
 
@@ -91,37 +89,28 @@ public class ParamSlider extends javax.swing.JPanel {
     private void paramSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_paramSliderStateChanged
         double temp = paramSlider.getValue() / 1000f;
         paramField.setText( Double.toString( temp ) );
-        function.setParam( index, temp);
+        parameter.setValue( temp);
     }//GEN-LAST:event_paramSliderStateChanged
 
     private void paramFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paramFieldActionPerformed
         Double temp = new Double ( paramField.getText() );
         paramSlider.setValue( (int)( temp * 1000f ) );
-        function.setParam( index, temp.doubleValue() );
+        parameter.setValue( temp.doubleValue() );
     }//GEN-LAST:event_paramFieldActionPerformed
 
-    public void setFunction( Function newForm ) {
-        function = newForm;
+    public void setParameter( Parameter newParam ) {
+        parameter = newParam;
     }
     
-    public Function getFunction() {
-        return function;
-    }
-    
-    public void setIndex( int newIndex ) {
-        index = newIndex;
-    }
-    
-    public int getIndex() {
-        return index;
+    public Parameter getParameter() {
+        return parameter;
     }
     
     public void setLabel( String label ) {
         paramLabel.setText( label + ":" );
     }
     
-    private GraphPanel.Function function;
-    private int index;
+    private GraphPanel.Parameter parameter;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField paramField;
     private javax.swing.JLabel paramLabel;
