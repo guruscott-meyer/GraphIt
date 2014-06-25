@@ -51,7 +51,7 @@ public class FuncChooser extends javax.swing.JPanel {
         functionLabel = new javax.swing.JLabel();
         sliderPanel = new javax.swing.JPanel();
 
-        functionBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Constant", "Line", "Quadratic", "Cubic", "Quartic", "lnX", "Power of E", "Power of X", "X Squared", "X Cubed", "Sine", "Cosine", "Tangent", "Secant", "Cosecant", "Cotangent", "Arcsine", "Arccosine", "Arctangent", "Arcsecant", "Arccosecant", "Arccotangent" }));
+        functionBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Function Builder", "Line", "Quadratic", "Cubic", "Quartic", "lnX", "Power of E", "Power of X", "X Squared", "X Cubed", "Sine", "Cosine", "Tangent", "Secant", "Cosecant", "Cotangent", "Arcsine", "Arccosine", "Arctangent", "Arcsecant", "Arccosecant", "Arccotangent" }));
         functionBox.setMaximumSize(new java.awt.Dimension(200, 22));
         functionBox.setMinimumSize(new java.awt.Dimension(200, 22));
         functionBox.setPreferredSize(new java.awt.Dimension(200, 22));
@@ -93,8 +93,18 @@ public class FuncChooser extends javax.swing.JPanel {
         sliderPanel.removeAll();
         ArrayList<Parameter> parameters = new ArrayList();
         switch( functionBox.getSelectedIndex() ) {
-            case 0: setupParameters( parameters, 1 );
-                    function = new FunctionFramework( parameters.get( 0 ), (a,b) -> "a" );
+            case 0: function = new FunctionFramework( (a,b) -> 0.0, (a,b) -> "0.0" );
+                    ArrayList<FunctionFramework> functions = new ArrayList();
+                    FunctionBuilderDialog builder = new FunctionBuilderDialog( new JFrame(), true, parameters, functions );
+                    builder.setVisible( true );
+                    function = functions.get(0);
+                    for( int i = 0; i < parameters.size(); i++ ) {
+                        parameters.get( i ).addPropertyChangeListener(mainGraphPanel);
+                        ParamSlider newParamSlider = new ParamSlider( parameters.get( i ) );
+                        String newLabel = new String( Character.toChars( Character.codePointAt( new char[] { 'a' }, 0 ) + i) );
+                        newParamSlider.setLabel( newLabel );
+                        sliderPanel.add( newParamSlider );
+                        }
                     break;
             case 1: setupParameters( parameters, 2 );
                     function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b, 
@@ -412,6 +422,10 @@ public class FuncChooser extends javax.swing.JPanel {
                             )
                         )
                     );
+                    break;
+//            case 22: function = new FunctionFramework( (a,b) -> 0, (a,b) -> "0" );
+//                    FunctionBuilderDialog builder = new FunctionBuilderDialog( new JFrame(), false, parameters, function );
+//                    builder.setVisible( true );
         }
         functionLabel.setText( "<html><i>y</i> = " + function.getLabelText() + "</html>");
         
