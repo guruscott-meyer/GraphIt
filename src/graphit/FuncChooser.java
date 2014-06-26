@@ -107,71 +107,71 @@ public class FuncChooser extends javax.swing.JPanel {
                         }
                     break;
             case 1: setupParameters( parameters, 2 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b, 
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ), 
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                             new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                             new FunctionFramework( (a,b) -> a, (a,b) -> "x" )),
                         new FunctionFramework( parameters.get(1), (a,b) -> "b"));
                     break;
             case 2: setupParameters( parameters, 3 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + "+" + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                             new FunctionFramework( parameters.get(0), (a,b) -> "a"),
-                            new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> a + "<sup>" + b + "</sup>",
+                            new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> String.format( "%s<sup>%s</sup>", a, b),
                                 new FunctionFramework( (a,b) -> a, (a,b) -> "x"),
                                 new FunctionFramework( (a,b) -> 2, (a,b) -> "2") )),
-                        new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b, 
+                        new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ), 
                                 new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                     new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
                                     new FunctionFramework( (a,b) -> a, (a,b) -> "x" )),
                                 new FunctionFramework( parameters.get(2), (a,b) -> "c")));
                     break;
             case 3: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + "+" + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                             new FunctionFramework( parameters.get(0), (a,b) -> "a"),
-                            new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> a + "<sup>" + b + "</sup>",
+                            new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> String.format("%s<sup>%s</sup>", a, b),
                                 new FunctionFramework( (a,b) -> a, (a,b) -> "x"),
                                 new FunctionFramework( (a,b) -> 3, (a,b) -> "3") )),
-                        new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + "+" + b,
+                        new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                             new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                 new FunctionFramework( parameters.get(1), (a,b) -> "b"),
-                                new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> a + "<sup>" + b + "</sup>",
+                                new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> String.format("%s<sup>%s</sup>", a, b),
                                     new FunctionFramework( (a,b) -> a, (a,b) -> "x"),
                                     new FunctionFramework( (a,b) -> 2, (a,b) -> "2") )),
-                            new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b, 
+                            new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ), 
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x" )),
                                     new FunctionFramework( parameters.get(3), (a,b) -> "d"))));
                     break;
             case 4: setupParameters( parameters, 5 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + "+" + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                             new FunctionFramework( parameters.get(0), (a,b) -> "a"),
-                            new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> a + "<sup>" + b + "</sup>",
+                            new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> String.format("%s<sup>%s</sup>", a, b),
                                 new FunctionFramework( (a,b) -> a, (a,b) -> "x"),
                                 new FunctionFramework( (a,b) -> 4, (a,b) -> "4") )),
-                        new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + "+" + b,
+                        new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                             new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                 new FunctionFramework( parameters.get(1), (a,b) -> "b"),
-                                new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> a + "<sup>" + b + "</sup>",
+                                new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> String.format("%s<sup>%s</sup>", a, b),
                                     new FunctionFramework( (a,b) -> a, (a,b) -> "x"),
                                     new FunctionFramework( (a,b) -> 3, (a,b) -> "3") )),
-                            new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + "+" + b,
+                            new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                 new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                     new FunctionFramework( parameters.get(2), (a,b) -> "c"),
-                                    new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> a + "<sup>" + b + "</sup>",
+                                    new TwoArgumentFunctionFramework( (a,b) -> Math.pow( a, b ), (a,b) -> String.format("%s<sup>%s</sup>", a, b),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x"),
                                         new FunctionFramework( (a,b) -> 2, (a,b) -> "2") )),
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b, 
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ), 
                                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                             new FunctionFramework( parameters.get(3), (a,b) -> "d" ),
                                             new FunctionFramework( (a,b) -> a, (a,b) -> "x" )),
                                         new FunctionFramework( parameters.get(4), (a,b) -> "e")))));
                     break;
             case 5: setupParameters( parameters, 2 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b, 
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ), 
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                             new FunctionFramework( parameters.get(0), (a,b) -> "a"),
                             new OneArgumentFunctionFramework( (a,b) -> Math.log(a), (a,b) -> "ln" + a,
@@ -182,9 +182,9 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 6: setupParameters( parameters, 2 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
-                        new OneArgumentFunctionFramework( (a,b) -> Math.exp( a ), (a,b) -> "e<sup>" + a + "</sup>",
+                        new OneArgumentFunctionFramework( (a,b) -> Math.exp( a ), (a,b) -> String.format( "e<sup>%s</sup>", a ),
                             new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                                 new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
                                 new FunctionFramework( (a,b) -> a, (a,b) -> "x" )
@@ -193,9 +193,9 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 7: setupParameters( parameters, 2 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
-                        new TwoArgumentFunctionFramework( (a,b) -> Math.pow(a, b), (a,b) -> a + "<sup>" + b + "</sup>",
+                        new TwoArgumentFunctionFramework( (a,b) -> Math.pow(a, b), (a,b) -> String.format("%s<sup>%s</sup>", a, b),
                             new FunctionFramework( (a,b) -> a, (a,b) -> "x" ),
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" )
                         )
@@ -204,7 +204,7 @@ public class FuncChooser extends javax.swing.JPanel {
             case 8: setupParameters( parameters, 1 );
                     function = new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                         new FunctionFramework( parameters.get(0), (a,b) -> "a"),
-                        new TwoArgumentFunctionFramework( (a,b) -> Math.pow(a,b), (a,b) -> a + "<sup>" + b + "</sup>",
+                        new TwoArgumentFunctionFramework( (a,b) -> Math.pow(a,b), (a,b) -> String.format("%s<sup>%s</sup>", a, b),
                             new FunctionFramework( (a,b) -> a, (a,b) -> "x" ),
                             new FunctionFramework( (a,b) -> 2, (a,b) -> "2" )
                         )
@@ -213,19 +213,19 @@ public class FuncChooser extends javax.swing.JPanel {
             case 9: setupParameters( parameters, 1 );
                     function = new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                         new FunctionFramework( parameters.get(0), (a,b) -> "a"),
-                        new TwoArgumentFunctionFramework( (a,b) -> Math.pow(a,b), (a,b) -> a + "<sup>" + b + "</sup>",
+                        new TwoArgumentFunctionFramework( (a,b) -> Math.pow(a,b), (a,b) -> String.format("%s<sup>%s</sup>", a, b),
                             new FunctionFramework( (a,b) -> a, (a,b) -> "x" ),
                             new FunctionFramework( (a,b) -> 3, (a,b) -> "3" )
                         )
                     );
                 break;
             case 10: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> Math.sin( a ), (a,b) -> "sin( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> Math.sin( a ), (a,b) -> String.format( "sin( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -237,11 +237,11 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 11: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> Math.cos( a ), (a,b) -> "cos( " + a + " )",
+                            new OneArgumentFunctionFramework( (a,b) -> Math.cos( a ), (a,b) -> String.format( "cos( %s )", a ),
                                 new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
@@ -254,12 +254,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 12: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> Math.tan( a ), (a,b) -> "tan( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> Math.tan( a ), (a,b) -> String.format( "tan( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -271,12 +271,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 13: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.sin( a ), (a,b) -> "sec( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.sin( a ), (a,b) -> String.format( "sec( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -288,12 +288,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 14: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.cos( a ), (a,b) -> "csc( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.cos( a ), (a,b) -> String.format( "csc( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -305,12 +305,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 15: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.tan( a ), (a,b) -> "cot( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.tan( a ), (a,b) -> String.format( "cot( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -322,12 +322,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 16: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> Math.asin( a ), (a,b) -> "Asin( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> Math.asin( a ), (a,b) -> String.format( "Asin( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -339,12 +339,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 17: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> Math.acos( a ), (a,b) -> "Acos( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> Math.acos( a ), (a,b) -> String.format( "Acos( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -356,12 +356,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 18: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> Math.atan( a ), (a,b) -> "Atan( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> Math.atan( a ), (a,b) -> String.format( "Atan( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -373,12 +373,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 19: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.asin( a ), (a,b) -> "Asec( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.asin( a ), (a,b) -> String.format( "Asec( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -390,12 +390,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 20: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.acos( a ), (a,b) -> "Acsc( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.acos( a ), (a,b) -> String.format( "Acsc( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -407,12 +407,12 @@ public class FuncChooser extends javax.swing.JPanel {
                     );
                     break;
             case 21: setupParameters( parameters, 4 );
-                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                    function = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                         new FunctionFramework( parameters.get(0), (a,b) -> "a" ),
                         new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b,
                             new FunctionFramework( parameters.get(1), (a,b) -> "b" ),
-                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.atan( a ), (a,b) -> "Acot( " + a + " )",
-                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> a + " + " + b,
+                            new OneArgumentFunctionFramework( (a,b) -> 1 / Math.atan( a ), (a,b) -> String.format( "Acot( %s )", a ),
+                                new TwoArgumentFunctionFramework( (a,b) -> a + b, (a,b) -> String.format( "%s + %s", a, b ),
                                     new TwoArgumentFunctionFramework( (a,b) -> a * b, (a,b) -> a + b, 
                                         new FunctionFramework( parameters.get(2), (a,b) -> "c" ),
                                         new FunctionFramework( (a,b) -> a, (a,b) -> "x")
@@ -427,7 +427,7 @@ public class FuncChooser extends javax.swing.JPanel {
 //                    FunctionBuilderDialog builder = new FunctionBuilderDialog( new JFrame(), false, parameters, function );
 //                    builder.setVisible( true );
         }
-        functionLabel.setText( "<html><i>y</i> = " + function.getLabelText() + "</html>");
+        functionLabel.setText( String.format("<html><i>y</i> = %s</html>", function.getLabelText() ) );
         
         Color newColor = JColorChooser.showDialog( this, "Function Color", function.getColor() );
         if( newColor != null ) {

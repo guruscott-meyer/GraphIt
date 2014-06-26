@@ -483,97 +483,97 @@ public class FunctionBuilderDialog extends javax.swing.JDialog{
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAcotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAcotActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.atan( a ), (a, b) -> "Acot(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.atan( a ), (a, b) -> String.format( "Acot(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonAcotActionPerformed
 
     private void buttonAcscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAcscActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.acos( a ), (a, b) -> "Acsc(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.acos( a ), (a, b) -> String.format( "Acsc(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonAcscActionPerformed
 
     private void buttonAsecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAsecActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.asin( a ), (a, b) -> "Asec(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.asin( a ), (a, b) -> String.format( "Asec(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonAsecActionPerformed
 
     private void buttonAtanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAtanActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.atan( a ), (a, b) -> "Atan(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.atan( a ), (a, b) -> String.format( "Atan(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonAtanActionPerformed
 
     private void buttonAcosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAcosActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.acos( a ), (a, b) -> "Acos(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.acos( a ), (a, b) -> String.format( "Acos(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonAcosActionPerformed
 
     private void buttonAsinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAsinActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.asin( a ), (a, b) -> "Asin(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.asin( a ), (a, b) -> String.format( "Asin(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonAsinActionPerformed
 
     private void buttonCotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCotActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.tan( a ), (a, b) -> "cot(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.tan( a ), (a, b) -> String.format( "cot(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonCotActionPerformed
 
     private void buttonCscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCscActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.cos( a ), (a, b) -> "csc(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.cos( a ), (a, b) -> String.format( "csc(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonCscActionPerformed
 
     private void buttonSecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSecActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.sin( a ), (a, b) -> "sec(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> 1 / Math.sin( a ), (a, b) -> String.format( "sec(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonSecActionPerformed
 
     private void buttonTanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTanActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.tan( a ), (a, b) -> "tan(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.tan( a ), (a, b) -> String.format( "Atan(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonTanActionPerformed
 
     private void buttonCosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCosActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.cos( a ), (a, b) -> "cos(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.cos( a ), (a, b) -> String.format( "cos(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonCosActionPerformed
 
     private void buttonSinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSinActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.sin( a ), (a, b) -> "sin(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.sin( a ), (a, b) -> String.format( "sin(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonSinActionPerformed
 
     private void buttonExpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExpActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.exp( a ), (a, b) -> "e<sup>" + a + "</sup>" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.exp( a ), (a, b) -> String.format("e<sup>%s</sup>", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonExpActionPerformed
 
     private void buttonPowerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPowerActionPerformed
-        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a, b) -> Math.pow(a, b), (a, b) -> a + "<sup>" + b + "</sup>" );
+        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a, b) -> Math.pow(a, b), (a, b) -> String.format( "%s<sup>%s</sup>", a, b ) );
         twoArgumentButton( tempfunc );
     }//GEN-LAST:event_buttonPowerActionPerformed
 
     private void buttonLnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLnActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.log( a ), (a, b) -> "ln(" + a + ")" );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.log( a ), (a, b) -> String.format( "ln(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonLnActionPerformed
 
     private void buttonDividedByActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDividedByActionPerformed
-        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a,b) -> a / b, (a, b) -> a + " / " + b );
+        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a,b) -> a / b, (a, b) -> String.format("%s / %s", a, b ) );
         twoArgumentButton( tempfunc );
     }//GEN-LAST:event_buttonDividedByActionPerformed
 
     private void buttonTimesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTimesActionPerformed
-        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a,b) -> a * b, (a, b) -> a + " * " + b );
+        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a,b) -> a * b, (a, b) -> String.format("%s * %s", a, b ) );
         twoArgumentButton( tempfunc );
     }//GEN-LAST:event_buttonTimesActionPerformed
 
     private void buttonMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMinusActionPerformed
-        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a,b) -> a - b, (a, b) -> a + " - " + b );
+        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a,b) -> a - b, (a, b) -> String.format("%s - %s", a, b ) );
         twoArgumentButton( tempfunc );
     }//GEN-LAST:event_buttonMinusActionPerformed
 
     private void buttonPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPlusActionPerformed
-        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a, b) -> a + " + " + b );
+        TwoArgumentFunctionFramework tempfunc = new TwoArgumentFunctionFramework( (a,b) -> a + b, (a, b) -> String.format("%s + %s", a, b ) );
         twoArgumentButton( tempfunc );
     }//GEN-LAST:event_buttonPlusActionPerformed
 
@@ -663,7 +663,7 @@ public class FunctionBuilderDialog extends javax.swing.JDialog{
     }
     
     private void updateFunction() {
-        functionLabel.setText( "<html><i>y</i> = " + functions.get( 0 ).getLabelText() + "</html>");
+        functionLabel.setText( String.format("<html><i>y</i> = %s</html>", functions.get( 0 ).getLabelText() ) );
     }
     
     private void oneArgumentButton( FunctionFramework tempFunc ) {

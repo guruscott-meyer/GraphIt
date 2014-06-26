@@ -57,7 +57,7 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
         mainGraphPanel.setLayout(mainGraphPanelLayout);
         mainGraphPanelLayout.setHorizontalGroup(
             mainGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGap(0, 496, Short.MAX_VALUE)
         );
         mainGraphPanelLayout.setVerticalGroup(
             mainGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,6 +113,31 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
             }
         });
         viewMenu.add(clearMenuItem);
+
+        jMenuBar1.add(viewMenu);
+
+        setJMenuBar(jMenuBar1);
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        viewMenu.setText("View");
+
+        zoomInMenuItem.setText("Zoom In");
+        zoomInMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zoomInMenuItemActionPerformed(evt);
+            }
+        });
+        viewMenu.add(zoomInMenuItem);
+
+        zoomOutMenuItem.setText("Zoom Out");
+        zoomOutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zoomOutMenuItemActionPerformed(evt);
+            }
+        });
+        viewMenu.add(zoomOutMenuItem);
 
         jMenuBar1.add(viewMenu);
 
