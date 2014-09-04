@@ -9,11 +9,14 @@ package graphit;
 import graphpanel.*;
 import java.util.ArrayList;
 import java.lang.Math;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author admin
  */
+
+@Component
 public class FunctionFactory {
     
     public static FunctionFramework Linear( ArrayList<Parameter> parameters ) {

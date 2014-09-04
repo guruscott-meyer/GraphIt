@@ -2,6 +2,7 @@ package graphit;
 
 import graphpanel.*;
 import java.util.ArrayList;
+import org.springframework.stereotype.Component;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,6 +14,8 @@ import java.util.ArrayList;
  *
  * @author admin
  */
+
+@Component
 public class FunctionBuilderDialog extends javax.swing.JDialog{
 
     private ArrayList<Parameter> parameters;
@@ -22,6 +25,11 @@ public class FunctionBuilderDialog extends javax.swing.JDialog{
     /**
      * Creates new form FunctionBuilderDialog
      */
+    
+    public FunctionBuilderDialog() {
+        
+    }
+    
     public FunctionBuilderDialog(java.awt.Frame parent, boolean modal, ArrayList<Parameter> newparam, ArrayList<FunctionFramework> newfunc ) {
         super(parent, "Function Builder", modal);
         initComponents();

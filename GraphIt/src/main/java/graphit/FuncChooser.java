@@ -11,11 +11,14 @@ import java.awt.Color;
 import java.beans.*;
 import java.util.ArrayList;
 import javax.swing.*;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author admin
  */
+
+@Component
 public class FuncChooser extends javax.swing.JPanel {
 
     /**
@@ -25,6 +28,10 @@ public class FuncChooser extends javax.swing.JPanel {
         initComponents();
         //setLayout(new BoxLayout( this, BoxLayout.Y_AXIS ));
         mainGraphPanel = newGraphPanel;
+    }
+    
+    public FuncChooser() {
+        
     }
     
     @Override
@@ -131,7 +138,7 @@ public class FuncChooser extends javax.swing.JPanel {
                     break;
             case 9: setupParameters( parameters, 1 );
                     function = FunctionFactory.X3( parameters );
-                break;
+                    break;
             case 10: setupParameters( parameters, 4 );
                     function = FunctionFactory.Sine( parameters );
                     break;

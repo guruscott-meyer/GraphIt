@@ -7,12 +7,15 @@
 package graphit;
 
 import graphpanel.Parameter;
+import org.springframework.stereotype.Component;
 
 
 /**
  *
  * @author Scott Meyer
  */
+
+@Component
 public class ParamSlider extends javax.swing.JPanel {
 
     /**

@@ -9,16 +9,22 @@ package graphit;
 import graphpanel.GraphPanel.*;
 import graphpanel.FunctionFramework.*;
 import java.awt.Color;
-import javax.swing.JColorChooser;
 import java.util.*;
 import java.beans.*;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Scott Meyer
  */
+
+@Component
 public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeListener {
 
+    private ArrayList<graphpanel.FunctionFramework> funcList;
+    private double scale;
+    private Color defaultColor;
+    
     /**
      * Creates new form GraphItGUI
      */
@@ -27,7 +33,7 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
         scale = 10.0;
         defaultColor = Color.BLACK;
         initComponents();
-        controlPanel.setLayout(new javax.swing.BoxLayout(controlPanel, javax.swing.BoxLayout.Y_AXIS));
+        
     }
 
     /**
@@ -66,7 +72,7 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
 
         controlPanel.setMaximumSize(new java.awt.Dimension(220, 32767));
         controlPanel.setMinimumSize(new java.awt.Dimension(220, 0));
-        controlPanel.setLayout(null);
+        controlPanel.setLayout(new javax.swing.BoxLayout(controlPanel, javax.swing.BoxLayout.Y_AXIS));
         controlScrollPane.setViewportView(controlPanel);
 
         jMenu1.setText("File");
@@ -195,39 +201,6 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
         controlPanel.removeAll();
         controlPanel.repaint();
     }//GEN-LAST:event_clearMenuItemActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GraphItGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GraphItGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GraphItGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GraphItGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new GraphItGUI().setVisible(true);
-        });
-    }
     
     @Override
     public void propertyChange( PropertyChangeEvent e ) {
@@ -240,9 +213,7 @@ public class GraphItGUI extends javax.swing.JFrame implements PropertyChangeList
         //pack();
     }
     
-    private ArrayList<graphpanel.FunctionFramework> funcList;
-    private double scale;
-    private Color defaultColor;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem clearMenuItem;
     private javax.swing.JMenuItem colorMenuItem;
