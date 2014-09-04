@@ -1,6 +1,6 @@
 package graphit;
 
-import graphpanel.*;
+import GraphPanel.*;
 import java.util.ArrayList;
 import java.lang.Math;
 
@@ -528,7 +528,7 @@ public class FunctionBuilderDialog extends javax.swing.JDialog{
     }//GEN-LAST:event_buttonSecActionPerformed
 
     private void buttonTanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTanActionPerformed
-        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.tan( a ), (a, b) -> String.format( "tan(%s)", a ) );
+        OneArgumentFunctionFramework tempFunc = new OneArgumentFunctionFramework( ( a, b ) -> Math.tan( a ), (a, b) -> String.format( "Atan(%s)", a ) );
         oneArgumentButton( tempFunc );
     }//GEN-LAST:event_buttonTanActionPerformed
 
