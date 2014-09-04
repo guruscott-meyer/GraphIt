@@ -11,7 +11,6 @@ import java.awt.Color;
 import java.beans.*;
 import java.util.ArrayList;
 import javax.swing.*;
-import java.lang.Math;
 
 /**
  *

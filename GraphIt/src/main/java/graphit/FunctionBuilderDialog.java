@@ -2,7 +2,6 @@ package graphit;
 
 import graphpanel.*;
 import java.util.ArrayList;
-import java.lang.Math;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
